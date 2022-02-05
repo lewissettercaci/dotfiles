@@ -31,7 +31,7 @@ wk.register({
         b = { '<cmd>Telescope buffers<CR>', 'Open Telescope buffer searcher' }
     },
     w = { '<cmd>w<CR>', 'Write' },
-    q = { '<cmd>w<CR>', 'Quit' }
+    q = { '<cmd>q<CR>', 'Quit' }
 }, { prefix = '<leader>' })
 wk.register({ k = { j = { '<ESC>', 'Escape' } } }, { mode = 'i' })
 
