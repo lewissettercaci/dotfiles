@@ -21,31 +21,9 @@ tools:
     format-command: 'black --quiet -'
     format-stdin: true
 
-  python-autopep8: &python-autopep8
-    format-command: 'autopep8 -'
-    format-stdin: true
-
-  python-yapf: &python-yapf
-    format-command: 'yapf --quiet'
-    format-stdin: true
-
   python-isort: &python-isort
     format-command: 'isort --quiet -'
     format-stdin: true
-
-  python-pylint: &python-pylint
-    lint-command: 'pylint --output-format text --score no --msg-template {path}:{line}:{column}:{C}:{msg} ${INPUT}'
-    lint-stdin: false
-    lint-formats:
-      - '%f:%l:%c:%t:%m'
-    lint-offset-columns: 1
-    lint-category-map:
-      I: H
-      R: I
-      C: I
-      W: W
-      E: E
-      F: E
 
   lua-lua-format: &lua-lua-format
     format-command: 'lua-format -i --double-quote-to-single-quote --spaces-inside-table-braces --break-before-table-rb --break-after-table-lb --chop-down-table --column-limit=120'
@@ -53,12 +31,10 @@ tools:
 
 languages:
   python:
-  # - <<: *python-flake8
-  # - <<: *python-mypy
-  # - <<: *python-autopep8
-  # - <<: *python-yapf
-  # - <<: *python-black
-  # - <<: *python-isort
+  - <<: *python-flake8
+  - <<: *python-mypy
+  - <<: *python-black
+  - <<: *python-isort
 
   lua:
     - <<: *lua-lua-format

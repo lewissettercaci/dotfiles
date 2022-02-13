@@ -51,7 +51,7 @@ end
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local extended_opts = {
-    efm = function(opts) opts['filetypes'] = { 'lua' } end,
+    efm = function(opts) opts['filetypes'] = { 'lua', 'python' } end,
     yamlls = function(opts)
         opts['settings'] = {
             yaml = {
