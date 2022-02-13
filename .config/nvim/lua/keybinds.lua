@@ -10,7 +10,7 @@ wk.register({
         k = { '<cmd>bnext<CR>', 'Next Tab' },
         l = { '<cmd>blast<CR>', 'Last Tab' },
         q = { '<cmd>BufferClose<CR>', 'Close Tab' },
-        o = { '<cmd>BufferOrderByNumber<CR>', 'Order Tabs by number' }
+        o = { '<cmd>BufferOrderByBufferNumber<CR>', 'Order Tabs by number' }
     },
 
     l = {

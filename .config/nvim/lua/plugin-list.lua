@@ -2,8 +2,9 @@ local M = {}
 
 function M.PluginList()
     return {
-        -- LSP
         'wbthomason/packer.nvim',
+
+        -- LSP
         'L3MON4D3/LuaSnip',
         'saadparwaiz1/cmp_luasnip',
         'hrsh7th/cmp-nvim-lsp',
@@ -58,13 +59,13 @@ function M.PluginList()
                     fzf = {
                         fuzzy = true, -- false will only do exact matching
                         override_generic_sorter = true, -- override the generic sorter
-                        override_file_sorter = true, -- override the file sorter
+                        override_file_sorter = true -- override the file sorter
                     }
                 }
             end
         },
 
-        -- movement and convenience
+        -- movement and editing
         {
             'terrortylor/nvim-comment',
             cmd = 'CommentToggle',

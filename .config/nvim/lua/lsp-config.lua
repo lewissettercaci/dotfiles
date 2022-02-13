@@ -1,3 +1,5 @@
+vim.lsp.set_log_level('trace')
+
 local cmp = require 'cmp'
 
 cmp.setup({
@@ -49,18 +51,12 @@ end
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local extended_opts = {
-    efm = function(opts)
-        opts['init_options'] = { documentFormatting = true }
-        opts['filetypes'] = { 'lua' }
+    efm = function(opts) opts['filetypes'] = { 'lua' } end,
+    yamlls = function(opts)
         opts['settings'] = {
-            rootMarkers = { '.git/' },
-            languages = {
-                lua = {
-                    {
-                        formatCommand = 'lua-format -i --double-quote-to-single-quote --spaces-inside-table-braces --break-before-table-rb --break-after-table-lb --chop-down-table --column-limit=120',
-                        formatStdin = true
-                    }
-                }
+            yaml = {
+                schemas = { ['http://json-schema.org/draft-04/schema'] = '/.config/efm-langserver/config.yaml' },
+                format = { enable = true, singleQuote = true }
             }
         }
     end
