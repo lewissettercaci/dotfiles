@@ -54,15 +54,7 @@ function M.PluginList()
                 { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
             },
             cmd = 'Telescope',
-            config = function()
-                extensions = {
-                    fzf = {
-                        fuzzy = true, -- false will only do exact matching
-                        override_generic_sorter = true, -- override the generic sorter
-                        override_file_sorter = true -- override the file sorter
-                    }
-                }
-            end
+            config = function() require('telescope').load_extension('fzf') end
         },
 
         -- movement and editing
@@ -73,7 +65,6 @@ function M.PluginList()
                 require('nvim_comment').setup { marker_padding = true, comment_empty = false }
             end
         },
-        { 'blackCauldron7/surround.nvim', config = function() end },
         { 'folke/which-key.nvim', config = function() require('which-key').setup() end },
         { 'mg979/vim-visual-multi', branch = 'master', keys = [[<C-n>]] },
         'ggandor/lightspeed.nvim',
