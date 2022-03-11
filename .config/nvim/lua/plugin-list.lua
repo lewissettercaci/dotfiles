@@ -13,7 +13,7 @@ function M.PluginList()
         'hrsh7th/cmp-cmdline',
         {
             'hrsh7th/nvim-cmp',
-            requires = { 'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer', 'onsails/lspkind-nvim' },
+            requires = { 'neovim/nvim-lspconfig', 'onsails/lspkind-nvim' },
             config = function() require 'lsp-config' end
         },
 
@@ -28,8 +28,7 @@ function M.PluginList()
         {
             'lewis6991/gitsigns.nvim',
             requires = 'nvim-lua/plenary.nvim',
-            config = function() require'gitsigns'.setup() end,
-            tag = 'v0.4'
+            config = function() require'gitsigns'.setup() end
         },
         {
             'nvim-lualine/lualine.nvim',
@@ -86,6 +85,12 @@ function M.PluginList()
     }
 end
 
-function M.InstallPlugins(use) for _, plugin in ipairs(M.PluginList()) do use(plugin) end end
+function M.InstallPlugins(use)
+    for _, plugin in ipairs(M.PluginList()) do
+        if type(plugin) ~= 'table' then plugin = { plugin } end
+        if plugin.tag == nil then plugin.tag = '*' end
+        use(plugin)
+    end
+end
 
 return M

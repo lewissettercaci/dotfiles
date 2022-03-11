@@ -32,7 +32,7 @@ tools:
 languages:
   python:
   - <<: *python-flake8
-  - <<: *python-mypy
+  # - <<: *python-mypy
   - <<: *python-black
   - <<: *python-isort
 

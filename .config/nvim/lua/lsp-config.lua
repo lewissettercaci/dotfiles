@@ -50,10 +50,11 @@ end
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
+local servers = { 'ccls', 'sumneko_lua', 'jedi_language_server', 'efm' }
+
 local extended_opts = {
-    efm = function(opts) opts['filetypes'] = { 'lua', 'python' } end,
     yamlls = function(opts)
-        opts['settings'] = {
+        opts.settings = {
             yaml = {
                 schemas = { ['http://json-schema.org/draft-04/schema'] = '/.config/efm-langserver/config.yaml' },
                 format = { enable = true, singleQuote = true }
@@ -62,10 +63,11 @@ local extended_opts = {
     end
 }
 
-require'nvim-lsp-installer'.on_server_ready(function(server)
-    local opts = { capabilities = capabilities, on_attach = on_attach }
-
-    if extended_opts[server.name] then extended_opts[server.name](opts) end
-
-    server:setup(opts)
-end)
+local lspconfig = require 'lspconfig'
+for _, lsp in pairs(servers) do
+    if lspconfig[lsp] then
+        local opts = { capabilities = capabilities, on_attach = on_attach }
+        if extended_opts[lsp] then extended_opts[lsp](opts) end
+        lspconfig[lsp].setup(opts)
+    end
+end
