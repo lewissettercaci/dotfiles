@@ -68,14 +68,6 @@ function M.PluginList()
         { 'mg979/vim-visual-multi', branch = 'master', keys = [[<C-n>]] },
         'ggandor/lightspeed.nvim',
 
-        -- terminal
-        {
-            'akinsho/toggleterm.nvim',
-            cmd = { 'TermExec', 'ToggleTerm' },
-            config = function() require 'toggleterm-config' end,
-            keys = [[<C-\>]]
-        },
-
         -- colorscheme
         { 'folke/tokyonight.nvim', config = function() require 'colorscheme' end },
 
