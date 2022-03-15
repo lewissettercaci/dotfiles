@@ -50,9 +50,10 @@ end
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-local servers = { 'ccls', 'sumneko_lua', 'jedi_language_server', 'efm', 'yamlls'}
+local servers = { 'ccls', 'sumneko_lua', 'jedi_language_server', 'efm', 'yamlls' }
 
 local extended_opts = {
+    efm = function(opts) opts.filetypes = { 'lua', 'python' } end,
     yamlls = function(opts)
         opts.settings = {
             yaml = {
