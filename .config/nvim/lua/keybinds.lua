@@ -16,7 +16,6 @@ wk.register({
 
     l = {
         name = '+LSP',
-        c = { '<cmd>CommentToggle<CR>', 'Toggle a comment' },
         o = { '<cmd>lua vim.diagnostic.open_float()<CR>', 'Open diagnostic' },
         k = { '<cmd>lua vim.diagnostic.goto_prev()<CR>', 'Go to prev diagnostic' },
         j = { '<cmd>lua vim.diagnostic.goto_next()<CR>', 'Go to next diagnostic' },
