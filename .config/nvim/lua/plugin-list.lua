@@ -59,7 +59,6 @@ function M.PluginList()
         -- movement and editing
         {
             'terrortylor/nvim-comment',
-            cmd = 'CommentToggle',
             config = function()
                 require('nvim_comment').setup { marker_padding = true, comment_empty = false }
             end
