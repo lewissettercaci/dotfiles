@@ -27,6 +27,7 @@ function M.PluginList()
         -- UI
         {
             'lewis6991/gitsigns.nvim',
+            tag = '*',
             requires = 'nvim-lua/plenary.nvim',
             config = function() require'gitsigns'.setup() end
         },
@@ -53,7 +54,14 @@ function M.PluginList()
                 { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
             },
             cmd = 'Telescope',
-            config = function() require('telescope').load_extension('fzf') end
+            config = function()
+                local telescope = require('telescope')
+                telescope.load_extension('fzf')
+                telescope.setup {
+                    defaults = { file_ignore_patterns = { '.git', '.ergo_work' } },
+                    pickers = { find_files = { hidden = true }, live_grep = { hidden = true } }
+                }
+            end
         },
 
         -- movement and editing
@@ -76,12 +84,6 @@ function M.PluginList()
     }
 end
 
-function M.InstallPlugins(use)
-    for _, plugin in ipairs(M.PluginList()) do
-        if type(plugin) ~= 'table' then plugin = { plugin } end
-        if plugin.tag == nil then plugin.tag = '*' end
-        use(plugin)
-    end
-end
+function M.InstallPlugins(use) for _, plugin in ipairs(M.PluginList()) do use(plugin) end end
 
 return M
