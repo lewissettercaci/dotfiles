@@ -10,12 +10,12 @@ wk.register({
         k = { '<cmd>bnext<CR>', 'Next Tab' },
         l = { '<cmd>blast<CR>', 'Last Tab' },
         q = { '<cmd>BufferClose<CR>', 'Close Tab' },
+        p = { '<cmd>BufferPick<CR>', 'Pick Tab' },
         o = { '<cmd>BufferOrderByBufferNumber<CR>', 'Order Tabs by number' }
     },
 
     l = {
         name = '+LSP',
-        c = { '<cmd>CommentToggle<CR>', 'Toggle a comment' },
         o = { '<cmd>lua vim.diagnostic.open_float()<CR>', 'Open diagnostic' },
         k = { '<cmd>lua vim.diagnostic.goto_prev()<CR>', 'Go to prev diagnostic' },
         j = { '<cmd>lua vim.diagnostic.goto_next()<CR>', 'Go to next diagnostic' },

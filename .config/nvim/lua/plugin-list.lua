@@ -13,7 +13,7 @@ function M.PluginList()
         'hrsh7th/cmp-cmdline',
         {
             'hrsh7th/nvim-cmp',
-            requires = { 'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer', 'onsails/lspkind-nvim' },
+            requires = { 'neovim/nvim-lspconfig', 'onsails/lspkind-nvim' },
             config = function() require 'lsp-config' end
         },
 
@@ -27,9 +27,9 @@ function M.PluginList()
         -- UI
         {
             'lewis6991/gitsigns.nvim',
+            tag = '*',
             requires = 'nvim-lua/plenary.nvim',
-            config = function() require'gitsigns'.setup() end,
-            tag = 'v0.4'
+            config = function() require'gitsigns'.setup() end
         },
         {
             'nvim-lualine/lualine.nvim',
@@ -54,13 +54,19 @@ function M.PluginList()
                 { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
             },
             cmd = 'Telescope',
-            config = function() require('telescope').load_extension('fzf') end
+            config = function()
+                local telescope = require('telescope')
+                telescope.load_extension('fzf')
+                telescope.setup {
+                    defaults = { file_ignore_patterns = { '.git', '.ergo_work' } },
+                    pickers = { find_files = { hidden = true }, live_grep = { hidden = true } }
+                }
+            end
         },
 
         -- movement and editing
         {
             'terrortylor/nvim-comment',
-            cmd = 'CommentToggle',
             config = function()
                 require('nvim_comment').setup { marker_padding = true, comment_empty = false }
             end
@@ -68,14 +74,6 @@ function M.PluginList()
         { 'folke/which-key.nvim', config = function() require('which-key').setup() end },
         { 'mg979/vim-visual-multi', branch = 'master', keys = [[<C-n>]] },
         'ggandor/lightspeed.nvim',
-
-        -- terminal
-        {
-            'akinsho/toggleterm.nvim',
-            cmd = { 'TermExec', 'ToggleTerm' },
-            config = function() require 'toggleterm-config' end,
-            keys = [[<C-\>]]
-        },
 
         -- colorscheme
         { 'folke/tokyonight.nvim', config = function() require 'colorscheme' end },
