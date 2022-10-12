@@ -1,0 +1,41 @@
+! Tokyo Night theme
+! general
+*foreground: #c8d3f5
+*background: #222436
+*cursorColor: #c8d3f5
+
+! terminal padding color
+*borderColor: #222436
+
+! black
+*color0: #1b1d2b
+*color8: #444a73
+
+! red
+*color1: #ff757f
+*color9: #ff757f
+
+! green
+*color2: #c3e88d
+*color10: #c3e88d
+
+! yellow
+*color3: #ffc777
+*color11: #ffc777
+
+! blue
+*color4: #82aaff
+*color12: #82aaff
+
+! magenta
+*color5: #c099ff
+*color13: #c099ff
+
+! cyan
+*color6: #4abaaf
+*color14: #4abaaf
+
+! white
+*color7: #acb0d0
+*color15: #acb0d0
+! Tokyo Night theme ends
