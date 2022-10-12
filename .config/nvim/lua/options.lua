@@ -26,6 +26,8 @@ vim.opt.undofile = true
 vim.opt.gdefault = true
 vim.opt.showmatch = true
 vim.opt.wrap = true
+vim.opt.ls = 0
+vim.opt.ch = 0
 
 vim.g.mapleader = ' '
 
