@@ -52,8 +52,8 @@ wk.register({
         b = { '<cmd>Gitsigns blame_line<CR>', 'Blame line' },
         d = { '<cmd>Gitsigns diffthis<CR>', 'Diff this' },
         S = { '<cmd>Gitsigns stage_buffer<CR>', 'Stage buffer' },
-        ['['] = { '<cmd>Gitsigns prev_hunk<CR>', 'Previous hunk' },
-        [']'] = { '<cmd>Gitsigns next_hunk<CR>', 'Next hunk' }
+        ['['] = { '<cmd>Gitsigns prev_hunk<CR><CR>', 'Previous hunk' },
+        [']'] = { '<cmd>Gitsigns next_hunk<CR><CR>', 'Next hunk' }
     }
 }, { prefix = '<leader>' })
 
