@@ -16,9 +16,8 @@ local plugins = {
 
     -- cmp
     { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
-    'tzachar/fuzzy.nvim',
-    'tzachar/cmp-fuzzy-buffer',
-    'tzachar/cmp-fuzzy-path',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
     'rafamadriz/friendly-snippets',
     'L3MON4D3/LuaSnip',
     'saadparwaiz1/cmp_luasnip',
