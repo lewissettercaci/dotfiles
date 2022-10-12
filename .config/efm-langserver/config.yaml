@@ -26,7 +26,7 @@ tools:
     format-stdin: true
 
   lua-lua-format: &lua-lua-format
-    format-command: 'lua-format -i --double-quote-to-single-quote --spaces-inside-table-braces --break-before-table-rb --break-after-table-lb --chop-down-table --column-limit=120'
+    format-command: 'lua-format -i'
     format-stdin: true
 
 languages:
