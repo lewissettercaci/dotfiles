@@ -43,7 +43,11 @@ local plugins = {
         requires = { 'kyazdani42/nvim-web-devicons' },
         config = function() require'lualine'.setup { options = { theme = 'tokyonight' } } end
     },
-    { 'romgrk/barbar.nvim', requires = 'kyazdani42/nvim-web-devicons' },
+    {
+        'romgrk/barbar.nvim',
+        requires = 'kyazdani42/nvim-web-devicons',
+        config = function() require'bufferline'.setup { icons = 'both' } end
+    },
 
     -- search
     {
