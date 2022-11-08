@@ -23,7 +23,7 @@ wk.register({
         s = { '<cmd>lua vim.lsp.buf.signature_help()<CR>', 'See signature' },
         t = { '<cmd>lua vim.lsp.buf.type_definition()<CR>', 'See type definition' },
         c = { '<cmd>lua vim.lsp.buf.code_action()<CR>', 'Code action' },
-        f = { '<cmd>lua vim.lsp.buf.formatting()<CR>', 'Format' },
+        f = { '<cmd>lua vim.lsp.buf.format()<CR>', 'Format' },
         r = { '<cmd>lua vim.lsp.buf.rename()<CR>', 'Rename' },
         e = { '<cmd>lua vim.lsp.buf.references()<CR>', 'See references' },
         w = {
