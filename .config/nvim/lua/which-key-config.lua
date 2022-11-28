@@ -54,6 +54,18 @@ wk.register({
         S = { '<cmd>Gitsigns stage_buffer<CR>', 'Stage buffer' },
         ['['] = { '<cmd>Gitsigns prev_hunk<CR><CR>', 'Previous hunk' },
         [']'] = { '<cmd>Gitsigns next_hunk<CR><CR>', 'Next hunk' }
+    },
+
+    d = {
+        name = '+DAP',
+        c = { '<cmd>DapContinue<CR>', 'Continue' },
+        o = { '<cmd>DapStepOut<CR>', 'Step out' },
+        i = { '<cmd>DapStepInto<CR>', 'Step into' },
+        s = { '<cmd>DapStepOver<CR>', 'Step over' },
+        b = { '<cmd>DapToggleBreakpoint<CR>', 'Toggle breakpoint' },
+        t = { '<cmd>DapTerminate<CR>', 'Terminate' },
+        r = { '<cmd>DapRestartFrame<CR>', 'Restart frame' },
+        u = { '<cmd>lua require\'dapui\'.toggle()<CR>', 'Toggle UI' }
     }
 }, { prefix = '<leader>' })
 
