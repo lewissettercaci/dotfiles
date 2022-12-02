@@ -28,6 +28,7 @@ local plugins = {
 
     -- LSP
     { 'neovim/nvim-lspconfig', requires = 'hrsh7th/cmp-nvim-lsp', config = function() require 'lsp-config' end },
+    { 'williamboman/mason.nvim', config = function() require'mason'.setup {} end },
 
     -- treesitter
     {
@@ -140,7 +141,7 @@ local plugins = {
             -- dap.configurations.rust = dap.configurations.cpp
         end
     },
-    { 'rcarriga/nvim-dap-ui', config = function() require'dapui'.setup() end },
+    { 'rcarriga/nvim-dap-ui', config = function() require'dapui'.setup() end }
 }
 
 require'packer'.startup({
