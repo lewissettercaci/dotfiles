@@ -23,7 +23,7 @@ wk.register({
         s = { '<cmd>lua vim.lsp.buf.signature_help()<CR>', 'See signature' },
         t = { '<cmd>lua vim.lsp.buf.type_definition()<CR>', 'See type definition' },
         c = { '<cmd>lua vim.lsp.buf.code_action()<CR>', 'Code action' },
-        f = { '<cmd>lua vim.lsp.buf.formatting()<CR>', 'Format' },
+        f = { '<cmd>lua vim.lsp.buf.format()<CR>', 'Format' },
         r = { '<cmd>lua vim.lsp.buf.rename()<CR>', 'Rename' },
         e = { '<cmd>lua vim.lsp.buf.references()<CR>', 'See references' },
         w = {
@@ -54,6 +54,18 @@ wk.register({
         S = { '<cmd>Gitsigns stage_buffer<CR>', 'Stage buffer' },
         ['['] = { '<cmd>Gitsigns prev_hunk<CR><CR>', 'Previous hunk' },
         [']'] = { '<cmd>Gitsigns next_hunk<CR><CR>', 'Next hunk' }
+    },
+
+    d = {
+        name = '+DAP',
+        c = { '<cmd>DapContinue<CR>', 'Continue' },
+        o = { '<cmd>DapStepOut<CR>', 'Step out' },
+        i = { '<cmd>DapStepInto<CR>', 'Step into' },
+        s = { '<cmd>DapStepOver<CR>', 'Step over' },
+        b = { '<cmd>DapToggleBreakpoint<CR>', 'Toggle breakpoint' },
+        t = { '<cmd>DapTerminate<CR>', 'Terminate' },
+        r = { '<cmd>DapRestartFrame<CR>', 'Restart frame' },
+        u = { '<cmd>lua require\'dapui\'.toggle()<CR>', 'Toggle UI' }
     }
 }, { prefix = '<leader>' })
 
