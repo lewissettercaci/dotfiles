@@ -15,7 +15,10 @@ local plugins = {
     'wbthomason/packer.nvim',
 
     -- cmp
-    { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+    {
+        'nvim-telescope/telescope-fzf-native.nvim',
+        run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+    },
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
     'rafamadriz/friendly-snippets',
@@ -58,11 +61,10 @@ local plugins = {
     },
     {
         'nvim-telescope/telescope.nvim',
-        requires = { 'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim', { 'nvim-telescope/telescope-fzf-native.nvim' } },
+        requires = { 'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim' },
         cmd = 'Telescope',
         config = function()
             local telescope = require 'telescope'
-            telescope.load_extension('fzf')
             telescope.setup {
                 defaults = { file_ignore_patterns = { '.git' } },
                 pickers = { find_files = { hidden = true }, live_grep = { hidden = true } },
@@ -76,6 +78,7 @@ local plugins = {
                     }
                 }
             }
+            telescope.load_extension('fzf')
         end
     },
 
